@@ -1,0 +1,136 @@
+@if(movieDetails){
+<div class="body" >
+<nav class="navbarmoviedet">
+    <div>
+        <a routerLink="/home"><img src="left-arrow-back-svgrepo-com.png" alt="logo" class="logomoviedet" width="40px" style="cursor: pointer;" /></a>
+    </div>
+    <div>
+        
+        <h2 class="titlenavbar">{{movieDetails.title }}</h2>
+        <p class="movieyear">({{movieDetails.release_date | date:'yyyy' }})</p>
+    </div>
+</nav>
+<header>
+    <div>
+        <img src="https://image.tmdb.org/t/p/original{{ movieDetails.backdrop_path }}" alt="" class="backdrop">
+        <div class="moviedett">
+                    <div class="realmoviedett">
+                        <img src="https://image.tmdb.org/t/p/w500{{ movieDetails.poster_path }}" alt="" class="posterimg">
+                        <div class="textdiv">
+                            <div class="titlediv">
+                    <h2 class="titleclass"> {{movieDetails.title }}</h2>
+                     <p class="subclass"> {{movieDetails.vote_average | number : '1.0-1'}} / 10 ({{movieDetails.vote_count}})</p>
+                    </div>
+                    <div>
+                    <p class="subclass"> {{movieDetails.release_date | date:'yyyy'}}</p>
+                    <p class="subclass"> 
+                        <span *ngFor="let genre of movieDetails.genres; let i = index">
+                            {{ genre.name }}<span *ngIf="i < movieDetails.genres.length - 1">, </span>
+                        </span>
+                </div>
+                    <p class="overviewclass">{{movieDetails.overview}}</p>
+                </div>
+                <div class="addfavdiv">
+                    <button class="addfav"><img src="love-svgrepo-com.png" alt="" class="svg">ADD TO FAVORITES</button>
+                </div>
+                        </div>
+        </div>
+    </div>
+</header>
+@if(similarMovies.length > 0){
+<section class="similarsec">
+ <h2 class="titleclass"> You may also Like</h2>
+<div class="sliders">
+    <swiper-container
+      #movieSwiper
+      class="mySwiper"
+      space-between="30"
+      slides-per-view="auto"
+      navigation="true"
+      class="swiper-container"
+    >
+    
+      @for (item of similarMovies; track $index) {
+        @if(item.poster_path){
+      <swiper-slide class="swiper-slide" >
+        <div class="slidesdiv" (click)="tomovie(item.id)">
+          <img
+            src="https://image.tmdb.org/t/p/w500{{ item.poster_path }}"
+            alt=""
+            class="slideimg"
+          />
+          <div class="slideinfo">
+            <h3 class="slidename">{{ item.title }}</h3>
+            @switch (item.genre_ids[0]) { @case (28) {
+            <p class="slidegenre action">Action</p>
+            } @case (12) {
+            <p class="slidegenre adventure">Adventure</p>
+            } @case (16) {
+            <p class="slidegenre animation">Animation</p>
+            } @case (35) {
+            <p class="slidegenre comedy">Comedy</p>
+            } @case (80) {
+            <p class="slidegenre crime">Crime</p>
+            } @case (99) {
+            <p class="slidegenre documentary">Documentary</p>
+            } @case (18) {
+            <p class="slidegenre drama">Drama</p>
+            } @case (10751) {
+            <p class="slidegenre family">Family</p>
+            } @case (14) {
+            <p class="slidegenre fantasy">Fantasy</p>
+            } @case (36) {
+            <p class="slidegenre history">History</p>
+            } @case (27) {
+            <p class="slidegenre horror">Horror</p>
+            } @case (10402) {
+            <p class="slidegenre music">Music</p>
+            } @case (9648) {
+            <p class="slidegenre mystery">Mystery</p>
+            } @case (10749) {
+            <p class="slidegenre romance">Romance</p>
+            } @case (878) {
+            <p class="slidegenre sci-fi">Sci-Fi</p>
+            } @case (10770) {
+            <p class="slidegenre tv-movie">TV Movie</p>
+            } @case (53) {
+            <p class="slidegenre thriller">Thriller</p>
+            } @case (10752) {
+            <p class="slidegenre war">War</p>
+            } @case (37) {
+            <p class="slidegenre western">Western</p>
+            } @default {
+            <p class="slidegenre movie">Movie</p>
+            } }
+          </div>
+        </div> </swiper-slide
+      >}}
+      <swiper-slide class="swiper-slide"
+        ><div class="loadmore" (click)="loadmore()">
+          <svg
+            width="100px"
+            fill="#ffffff"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+            stroke="#ffffff"
+            class="reload"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <title>ionicons-v5-b</title>
+              <path
+                d="M256,48C141.31,48,48,141.31,48,256s93.31,208,208,208,208-93.31,208-208S370.69,48,256,48ZM376,230.15a8.62,8.62,0,0,1-8.62,8.62H307.84a8.61,8.61,0,0,1-6.09-14.71l22.17-22.17-5.6-6.51a87.38,87.38,0,1,0-62.94,148,87.55,87.55,0,0,0,82.42-58.25A16,16,0,1,1,368,295.8,119.4,119.4,0,1,1,255.38,136.62a118.34,118.34,0,0,1,86.36,36.95l.56.62,4.31,5,14.68-14.68a8.44,8.44,0,0,1,6-2.54,8.61,8.61,0,0,1,8.68,8.63Z"
+              ></path>
+            </g>
+          </svg>
+          <h2 class="textload">Click to Load more</h2>
+        </div></swiper-slide
+      >
+    </swiper-container>
+  </div>
+
+
+
+</section>}
+</div>}

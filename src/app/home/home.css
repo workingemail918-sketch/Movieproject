@@ -1,0 +1,818 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+.home-container{
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: -15px;
+        height: 700px;
+
+}
+.headerimg{
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+    opacity: 1;
+}
+.logo{
+    width: 200px;
+    object-fit: cover;
+    /* margin-left: -100px; */
+}
+.nav-1{
+color: white;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 20px;
+}
+.nav{
+color: white;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px 80px;
+}
+.tabs{
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+    height: 100px;
+    display: flex;
+    align-items: center;    
+    font-weight: 500;
+}
+.tabs:hover{
+    color: #b3b3b3;
+    transition: all 0.3s;
+}
+.tabs::before{
+    content: '';
+    display: block;
+    width: 0%;
+    height: 4px;
+    background-color: rgb(255, 215, 0);
+    transition: width 0.3s;
+    position: absolute;
+    top: 5px;
+}
+.tabs:hover::before{
+    width: 100%;
+}
+.sign-in{
+    background-color: #646464;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+        transition: all 0.3s;
+    border: none;
+}
+.sign-in:hover{
+    background-color: #8d8d8d;
+}
+.home-content{
+    color: white;
+    text-align: start;
+    margin-top: 130px;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 80px;
+}
+.headingcontent{
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.headingsub{
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    max-width: 600px;
+    color: rgba(255, 255, 255, 0.822);
+}
+.bigbtn{
+    background-color: rgb(255, 215, 0);
+    padding: 16px 30px;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+        transition: all 0.3s;
+}
+.bigbtn:hover{
+    background-color: rgb(255, 235, 59);
+    transform: scale(1.04);
+}
+.headingfilm{
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-family: 'inter';
+}
+.filmcontainer{
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+.Movienumber{
+     font-size: 65px;
+    font-weight: 700;
+    font-family: 'inter';
+    margin: 0;
+    margin-right: -20px;
+}
+.topten{
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 300px));
+    gap: 70px;
+    width: 100%;
+justify-content: center;}
+.filmname{
+    font-weight: 600;
+    margin-top: 10px;
+        font-family: 'inter';
+
+}
+.filmimg{
+    transition: all 0.3s;
+        cursor: pointer;
+
+}
+.filmcontainer:hover .filmimg{
+    transform: scale(1.1);
+    filter: brightness(1.5);
+}
+
+.swiper-container {
+      width: 100%;
+       --swiper-navigation-color: #ffffff; /* your color here */
+  --swiper-navigation-size: 60px; 
+    --swiper-navigation-sides-offset: 10px;
+
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      background: red;
+    }
+
+    .swiper-slide img {
+      display: block;
+      object-fit: contain;
+      height: 420px;
+      transition: all 0.3s;
+    }
+    .swiper-slide:hover img {
+     transform: scale(1.02);
+    cursor: pointer;
+    filter: brightness(1.5);
+    }
+
+    .swiper-slide {
+      width: 300px;
+    }
+
+
+    .sliders{
+        padding: 40px;
+    }
+   
+.slidename{
+    font-weight: 600;
+    margin-top: 10px;
+        font-family: 'inter';
+        text-align: start;
+        margin-bottom: 10px;
+}
+.slidesdiv{
+    cursor: pointer;
+    width: 100%; display: flex; flex-direction: column;
+    background-color: #060d17;
+}.slidegenre.action {
+  font-size: 14px;
+  color: #060d17;
+  margin-top: 5px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: start;
+  font-weight: 600;
+  background-color: #ff5454;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 4px 10px;
+}
+
+.slidegenre.adventure {
+  font-size: 14px;
+  color: #060d17;
+  margin-top: 5px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: start;
+  font-weight: 600;
+  background-color: #4fc3f7;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 4px 10px;
+}
+
+.slidegenre.animation {
+  font-size: 14px;
+  color: #060d17;
+  margin-top: 5px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: start;
+  font-weight: 600;
+  background-color: #78ff78;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 4px 10px;
+}
+
+.slidegenre.comedy {
+  font-size: 14px;
+  color: #060d17;
+  margin-top: 5px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: start;
+  font-weight: 600;
+  background-color: gold;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 4px 10px;
+}
+
+.slidegenre.crime {
+  font-size: 14px;
+  color: #060d17;
+  margin-top: 5px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: start;
+  font-weight: 600;
+  background-color: #ffffff;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 4px 10px;
+}
+
+.slidegenre.drama {
+  font-size: 14px;
+  color: #060d17;
+  margin-top: 5px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: start;
+  font-weight: 600;
+  background-color: #ffb74d;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 4px 10px;
+}
+
+.slidegenre.romance {
+  font-size: 14px;
+  color: #060d17;
+  margin-top: 5px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: start;
+  font-weight: 600;
+  background-color: pink;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 4px 10px;
+}
+
+.slidegenre.sci-fi {
+  font-size: 14px;
+  color: white;
+  margin-top: 5px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: start;
+  font-weight: 600;
+  background-color: purple;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 4px 10px;
+}
+
+.slidegenre.thriller {
+  font-size: 14px;
+  color: #060d17;
+  margin-top: 5px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: start;
+  font-weight: 600;
+  background-color: rgb(141, 141, 255);
+  width: fit-content;
+  border-radius: 10px;
+  padding: 4px 10px;
+}
+
+.slidegenre.horror {
+  font-size: 14px;
+  color: white;
+  margin-top: 5px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: start;
+  font-weight: 600;
+  background-color: rgb(128, 6, 6);
+  width: fit-content;
+  border-radius: 10px;
+  padding: 4px 10px;
+}
+.slidegenre.war {
+  font-size: 14px;
+  color: white;
+  margin-top: 5px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: start;
+  font-weight: 600;
+  background-color: rgb(46, 46, 46);
+  width: fit-content;
+  border-radius: 10px;
+  padding: 4px 10px;
+}
+.slidegenre.fantasy {
+  font-size: 14px;
+  color: white;
+  margin-top: 5px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: start;
+  font-weight: 600;
+  background-color: rgb(255, 0, 200);
+  width: fit-content;
+  border-radius: 10px;
+  padding: 4px 10px;
+}
+
+
+
+.slidegenre.movie {
+  font-size: 14px;
+  color: #060d17;
+  margin-top: 5px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: start;
+  font-weight: 600;
+  background-color: #e0e0e0;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 4px 10px;
+}
+
+.slidegenre {
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  margin-top: 5px;
+  padding: 4px 10px;
+  border-radius: 10px;
+  width: fit-content;
+  color: #060d17;
+}
+.slidegenre {
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.slidegenre:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.slidegenre.action{
+    font-size: 14px;
+    color: #060d17;
+    margin-top: 5px;
+        font-family: 'Montserrat', sans-serif;
+        text-align: start;
+            font-weight: 600;
+    background-color: #ff5454;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 4px 10px;
+}
+.slidegenre.Adventure{
+    font-size: 14px;
+    color: #060d17;
+    margin-top: 5px;
+        font-family: 'Montserrat', sans-serif;
+        text-align: start;
+            font-weight: 600;
+    background-color: #ffffff;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 4px 10px;
+}
+.slidegenre.Animation{
+    font-size: 14px;
+    color: #060d17;
+    margin-top: 5px;
+        font-family: 'Montserrat', sans-serif;
+        text-align: start;
+            font-weight: 600;
+    background-color: rgb(120, 255, 120);
+    width: fit-content;
+    border-radius: 10px;
+    padding: 4px 10px;
+}
+.slidegenre.Comedy{
+    font-size: 14px;
+    color: #060d17;
+    margin-top: 5px;
+        font-family: 'Montserrat', sans-serif;
+        text-align: start;
+            font-weight: 600;
+    background-color: gold;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 4px 10px;
+}
+.slidegenre.Crime{
+    font-size: 14px;
+    color: #060d17;
+    margin-top: 5px;
+        font-family: 'Montserrat', sans-serif;
+        text-align: start;
+            font-weight: 600;
+    background-color: #ffffff;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 4px 10px;
+}
+.slidegenre.Romance{
+    font-size: 14px;
+    color: #060d17;
+    margin-top: 5px;
+        font-family: 'Montserrat', sans-serif;
+        text-align: start;
+            font-weight: 600;
+    background-color: pink;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 4px 10px;
+}
+.slidegenre.Sci-Fi{
+    font-size: 14px;
+    color: #060d17;
+    margin-top: 5px;
+        font-family: 'Montserrat', sans-serif;
+        text-align: start;
+            font-weight: 600;
+    background-color: purple;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 4px 10px;
+}
+.slidegenre.Thriller{
+    font-size: 14px;
+    color: #060d17;
+    margin-top: 5px;
+        font-family: 'Montserrat', sans-serif;
+        text-align: start;
+            font-weight: 600;
+    background-color: rgb(141, 141, 255);
+    width: fit-content;
+    border-radius: 10px;
+    padding: 4px 10px;
+}
+.slidegenre.Horror{
+    font-size: 14px;
+    color: #060d17;
+    margin-top: 5px;
+        font-family: 'Montserrat', sans-serif;
+        text-align: start;
+            font-weight: 600;
+    background-color: rgb(128, 6, 6);
+    width: fit-content;
+    border-radius: 10px;
+    padding: 4px 10px;
+}
+ .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #444;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+      .swiper-containerr {
+      width: 100%;
+      max-width: 1400px;
+      height: 500px;
+             --swiper-navigation-color: #ffffff;
+  --swiper-navigation-size: 60px; 
+    --swiper-navigation-sides-offset: 10px;
+      --swiper-pagination-color: white;
+        --swiper-pagination-bullet-inactive-color: #6d6d6d;
+
+
+    }
+
+    .swiper-slidee {
+      text-align: center;
+      font-size: 18px;
+      background: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slidee img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+        object-position: top;
+                cursor: pointer;
+        transition: all 0.3s;
+
+        
+    }
+    .swiper-slidee img:hover {
+     transform: scale(1.05);
+
+    }
+    
+    .newmovies{
+        padding: 40px ;
+        color: white;
+    }
+    .newmovieheading{
+        font-size: 45px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        font-family: 'inter';
+        position: absolute;
+    }
+    .headingfilm2{
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-family: 'inter';
+    position: absolute;
+    top: 50%;
+    left: 4%;
+    z-index: 10;
+    background-color: #060d173d;
+}
+.slidesdivd {
+    cursor: pointer;
+    width: 100%;
+    background-color: #060d17;
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+}
+.filmdec{
+     font-size: 16px;
+    margin-bottom: 20px;
+    font-family: 'inter';
+    position: absolute;
+    top: 60%;
+    left: 4%;
+    z-index: 10;
+    width: 100%;
+    background-color: #060d173d;
+    text-align: start;
+    margin-top: 40px;
+    max-width: 500px;
+}
+.logofooter{
+    width: 200px;
+    height: 100px;
+    height: auto;
+    object-fit: contain;
+}
+footer{
+    background-color: #0e1b30;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-family: 'Montserrat', sans-serif;
+}
+.footertext{
+    font-size: 14px;
+}
+* {
+  box-sizing: border-box;
+}
+.loadmore{
+  height: 420px;
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  background-color:#060d17;
+  width: 100%;
+  align-items: center;
+  cursor: pointer;
+}
+.textload{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.loadmore:hover .reload{
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+@media (max-width: 1200px) {
+  .nav {
+    padding: 10px 40px;
+  }
+
+  .headingcontent {
+    font-size: 48px;
+  }
+
+  .headingsub {
+    font-size: 20px;
+  }
+
+  .swiper-slide {
+    width: 260px;
+  }
+}
+@media (max-width: 1200px) {
+  .nav {
+    padding: 10px 40px;
+  }
+
+  .headingcontent {
+    font-size: 48px;
+  }
+
+  .headingsub {
+    font-size: 20px;
+  }
+
+  .swiper-slide {
+    width: 260px;
+  }
+}
+@media (max-width: 768px) {
+    .home-container{
+        height: 500px;
+    }
+  .headerimg {
+    height: 500px;
+  }
+
+  .nav {
+    padding: 10px 20px;
+  }
+
+  .tabs {
+    font-size: 16px;
+    height: auto;
+  }
+
+  .tabs::before{
+    content: '';
+    display: block;
+    width: 0%;
+    height: 0;
+    background-color: rgb(255, 215, 0);
+    transition: width 0.3s;
+    position: absolute;
+    top: 5px;
+}
+.tabs:hover::before{
+    width: 0%;
+}
+  .home-content {
+    margin: 0 20px;
+    margin-top: 120px;
+    text-align: center;
+  }
+
+  .headingcontent {
+    font-size: 32px;
+  }
+
+  .headingsub {
+    font-size: 16px;
+  }
+
+  .bigbtn {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+
+  .swiper-slide {
+    width: 220px;
+  }
+
+  .headingfilm2,
+  .filmdec {
+    position: static;
+    background: none;
+    margin: 10px 0;
+  }
+}
+@media (max-width: 480px) {
+  .nav {
+    margin-top: 20px;
+  }
+  .logo {
+    width: 150px;
+    height: auto;
+    margin-left: 0;
+    margin-right: -20px;
+    margin-top: 4px;
+  }
+
+  .headingcontent {
+    font-size: 26px;
+  }
+
+  .headingfilm,
+  .headingfilm2 {
+    font-size: 28px;
+  }
+
+  .Movienumber {
+    font-size: 48px;
+  }
+
+  .swiper-slide img {
+    height: 300px;
+  }
+
+  footer {
+    padding: 30px 15px;
+  }
+
+  .footertext {
+    font-size: 12px;
+  }
+  .tabs{
+    margin-right: -20px;
+    font-size: 13px;
+  }
+  .nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    align-items: center;
+  }
+  
+  .sign-in{
+    transform: scale(0.6);
+  }
+  .topten{
+     grid-template-columns:1fr 1fr ;
+    gap: 30px;
+    
+    width: 100%;
+  }
+  .filmcontainer{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+    .swiper-containerr {
+ 
+  --swiper-navigation-size: 30px; 
+  --swiper-pagination-bullet-opacity: 0;
+  --swiper-pagination-bullet-inactive-opacity: 0;
+
+
+    }
+      .swiper-container {
+ 
+  --swiper-navigation-size: 30px; 
+
+
+
+    }
+}

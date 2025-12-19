@@ -1,0 +1,283 @@
+<div class="home-container">
+  <img src="global-home-bg-comp.avif.jpg" alt="" class="headerimg" />
+  <nav class="nav">
+    <div class="nav-1">
+      <img src="ChatGPT Image Dec 18, 2025, 10_23_01 AM.png" alt="" class="logo" />
+      <div style="display: flex; gap: 50px; align-items: center">
+        <p class="tabs" (click)="scrollto()">Movies</p>
+        <p class="tabs">My Favorites</p>
+      </div>
+    </div>
+    <button class="sign-in">Sign In</button>
+  </nav>
+  <div class="home-content">
+    <h1 class="headingcontent">Welcome to the anyMovie</h1>
+    <p class="headingsub">
+      Discover and explore a wide range of movies, Find movies, add them to your watchlist, and come
+      back anytime.
+    </p>
+    <button class="bigbtn" (click)="scrollto()">Start Exploring</button>
+  </div>
+</div>
+<section
+  style="color: white; display: flex; flex-direction: column; gap: 20px; margin-top: 30px"
+  id="movies"
+>
+  <div style="color: white; padding: 10px 30px">
+    <h1 class="headingfilm">Top 10 Rated Movies</h1>
+  </div>
+
+  <div class="topten">
+    @for (item of moviestoprated; track $index) {
+    <div class="filmcontainer" (click)="tomovie(item.id)">
+      <p class="Movienumber">{{ $index + 1 }}</p>
+      <img
+        src="https://image.tmdb.org/t/p/w200{{ item.poster_path }}"
+        alt=""
+        class="filmimg"
+        width="100px"
+        height="150px"
+      />
+      <div class="filminfo">
+        <h2 class="filmname">{{ item.title }}</h2>
+      </div>
+    </div>
+    }
+  </div>
+</section>
+<section
+  style="
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  "
+>
+  <div style="color: white; padding: 10px 30px">
+    <h1 class="headingfilm">Popular Movies</h1>
+  </div>
+
+  <div class="sliders">
+    <swiper-container
+      #movieSwiper
+      class="mySwiper"
+      space-between="30"
+      slides-per-view="auto"
+      navigation="true"
+      class="swiper-container"
+    >
+      @for (item of movieData; track $index) {
+      <swiper-slide class="swiper-slide" >
+        <div class="slidesdiv" (click)="tomovie(item.id)">
+          <img
+            src="https://image.tmdb.org/t/p/w500{{ item.poster_path }}"
+            alt=""
+            class="slideimg"
+          />
+          <div class="slideinfo">
+            <h3 class="slidename">{{ item.title }}</h3>
+            @switch (item.genre_ids[0]) { @case (28) {
+            <p class="slidegenre action">Action</p>
+            } @case (12) {
+            <p class="slidegenre adventure">Adventure</p>
+            } @case (16) {
+            <p class="slidegenre animation">Animation</p>
+            } @case (35) {
+            <p class="slidegenre comedy">Comedy</p>
+            } @case (80) {
+            <p class="slidegenre crime">Crime</p>
+            } @case (99) {
+            <p class="slidegenre documentary">Documentary</p>
+            } @case (18) {
+            <p class="slidegenre drama">Drama</p>
+            } @case (10751) {
+            <p class="slidegenre family">Family</p>
+            } @case (14) {
+            <p class="slidegenre fantasy">Fantasy</p>
+            } @case (36) {
+            <p class="slidegenre history">History</p>
+            } @case (27) {
+            <p class="slidegenre horror">Horror</p>
+            } @case (10402) {
+            <p class="slidegenre music">Music</p>
+            } @case (9648) {
+            <p class="slidegenre mystery">Mystery</p>
+            } @case (10749) {
+            <p class="slidegenre romance">Romance</p>
+            } @case (878) {
+            <p class="slidegenre sci-fi">Sci-Fi</p>
+            } @case (10770) {
+            <p class="slidegenre tv-movie">TV Movie</p>
+            } @case (53) {
+            <p class="slidegenre thriller">Thriller</p>
+            } @case (10752) {
+            <p class="slidegenre war">War</p>
+            } @case (37) {
+            <p class="slidegenre western">Western</p>
+            } @default {
+            <p class="slidegenre movie">Movie</p>
+            } }
+          </div>
+        </div> </swiper-slide
+      >}
+      <swiper-slide class="swiper-slide"
+        ><div class="loadmore" (click)="loadmore()">
+          <svg
+            width="100px"
+            fill="#ffffff"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+            stroke="#ffffff"
+            class="reload"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <title>ionicons-v5-b</title>
+              <path
+                d="M256,48C141.31,48,48,141.31,48,256s93.31,208,208,208,208-93.31,208-208S370.69,48,256,48ZM376,230.15a8.62,8.62,0,0,1-8.62,8.62H307.84a8.61,8.61,0,0,1-6.09-14.71l22.17-22.17-5.6-6.51a87.38,87.38,0,1,0-62.94,148,87.55,87.55,0,0,0,82.42-58.25A16,16,0,1,1,368,295.8,119.4,119.4,0,1,1,255.38,136.62a118.34,118.34,0,0,1,86.36,36.95l.56.62,4.31,5,14.68-14.68a8.44,8.44,0,0,1,6-2.54,8.61,8.61,0,0,1,8.68,8.63Z"
+              ></path>
+            </g>
+          </svg>
+          <h2 class="textload">Click to Load more</h2>
+        </div></swiper-slide
+      >
+    </swiper-container>
+  </div>
+</section>
+<section class="newmovies">
+  <h1 class="headingfilm">Now in Cinemas</h1>
+  <div class="Movie-slideshow">
+    <swiper-container
+      pagination="true"
+      pagination-clickable="true"
+      navigation="true"
+      space-between="30"
+      centered-slides="true"
+      autoplay-delay="2500"
+      autoplay-disable-on-interaction="false"
+      class="swiper-containerr"
+    >
+      @for (item of movienowplaying; track $index) {
+      <swiper-slide class="swiper-slidee"
+        ><div class="slidesdivd" (click)="tomovie(item.id)">
+          <img
+            src="https://image.tmdb.org/t/p/original{{ item.backdrop_path }}"
+            alt=""
+            class="bannerimg"
+          />
+          <h1 class="headingfilm2">{{ item.title }}</h1>
+          <p class="filmdec">{{ item.overview | slice : 0 : 200 }}...</p>
+        </div></swiper-slide
+      >}
+    </swiper-container>
+  </div>
+</section>
+<section
+  style="
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  "
+>
+  <div style="color: white; padding: 10px 30px">
+    <h1 class="headingfilm">Upcoming Movies</h1>
+  </div>
+
+  <div class="sliders">
+    <swiper-container
+    #movieSwiperr
+      class="mySwiper"
+      space-between="30"
+      slides-per-view="auto"
+      navigation="true"
+      class="swiper-container"
+    >
+      @for (item of movieupcoming; track $index) {
+      <swiper-slide class="swiper-slide">
+        <div class="slidesdiv" (click)="tomovie(item.id)">
+          <img
+            src="https://image.tmdb.org/t/p/w500{{ item.poster_path }}"
+            alt=""
+            class="slideimg"
+          />
+          <div class="slideinfo">
+            <h3 class="slidename">{{ item.title }}</h3>
+            @switch (item.genre_ids[0]) { @case (28) {
+            <p class="slidegenre action">Action</p>
+            } @case (12) {
+            <p class="slidegenre adventure">Adventure</p>
+            } @case (16) {
+            <p class="slidegenre animation">Animation</p>
+            } @case (35) {
+            <p class="slidegenre comedy">Comedy</p>
+            } @case (80) {
+            <p class="slidegenre crime">Crime</p>
+            } @case (99) {
+            <p class="slidegenre documentary">Documentary</p>
+            } @case (18) {
+            <p class="slidegenre drama">Drama</p>
+            } @case (10751) {
+            <p class="slidegenre family">Family</p>
+            } @case (14) {
+            <p class="slidegenre fantasy">Fantasy</p>
+            } @case (36) {
+            <p class="slidegenre history">History</p>
+            } @case (27) {
+            <p class="slidegenre horror">Horror</p>
+            } @case (10402) {
+            <p class="slidegenre music">Music</p>
+            } @case (9648) {
+            <p class="slidegenre mystery">Mystery</p>
+            } @case (10749) {
+            <p class="slidegenre romance">Romance</p>
+            } @case (878) {
+            <p class="slidegenre sci-fi">Sci-Fi</p>
+            } @case (10770) {
+            <p class="slidegenre tv-movie">TV Movie</p>
+            } @case (53) {
+            <p class="slidegenre thriller">Thriller</p>
+            } @case (10752) {
+            <p class="slidegenre war">War</p>
+            } @case (37) {
+            <p class="slidegenre western">Western</p>
+            } @default {
+            <p class="slidegenre movie">Movie</p>
+            } }
+          </div>
+        </div> </swiper-slide
+      >}
+      <swiper-slide class="swiper-slide"
+        ><div class="loadmore" (click)="loadmoree()">
+          <svg
+            width="100px"
+            fill="#ffffff"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+            stroke="#ffffff"
+            class="reload"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <title>ionicons-v5-b</title>
+              <path
+                d="M256,48C141.31,48,48,141.31,48,256s93.31,208,208,208,208-93.31,208-208S370.69,48,256,48ZM376,230.15a8.62,8.62,0,0,1-8.62,8.62H307.84a8.61,8.61,0,0,1-6.09-14.71l22.17-22.17-5.6-6.51a87.38,87.38,0,1,0-62.94,148,87.55,87.55,0,0,0,82.42-58.25A16,16,0,1,1,368,295.8,119.4,119.4,0,1,1,255.38,136.62a118.34,118.34,0,0,1,86.36,36.95l.56.62,4.31,5,14.68-14.68a8.44,8.44,0,0,1,6-2.54,8.61,8.61,0,0,1,8.68,8.63Z"
+              ></path>
+            </g>
+          </svg>
+          <h2 class="textload">Click to Load more</h2>
+        </div></swiper-slide
+      >
+    </swiper-container>
+  </div>
+</section>
+<footer>
+  <img src="ChatGPT Image Dec 18, 2025, 10_23_01 AM.png" alt="" class="logofooter" />
+  <p class="footertext">© 2025 anyMovie. All rights reserved.</p>
+</footer>
