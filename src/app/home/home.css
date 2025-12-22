@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+.nav-mobile{
+display: none;
+}
 .home-container{
     width: 100%;
     font-family: 'Montserrat', sans-serif;
@@ -182,7 +185,12 @@ justify-content: center;}
     .swiper-slide {
       width: 300px;
     }
-
+.svg{
+  width: 40px;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
 
     .sliders{
         padding: 40px;
@@ -199,6 +207,7 @@ justify-content: center;}
     cursor: pointer;
     width: 100%; display: flex; flex-direction: column;
     background-color: #060d17;
+    position: relative;
 }.slidegenre.action {
   font-size: 14px;
   color: #060d17;
@@ -739,9 +748,7 @@ img {
   }
 }
 @media (max-width: 480px) {
-  .nav {
-    margin-top: 20px;
-  }
+
   .logo {
     width: 150px;
     height: auto;
@@ -779,11 +786,7 @@ img {
     font-size: 13px;
   }
   .nav{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
-    align-items: center;
+display: none;
   }
   
   .sign-in{
@@ -815,4 +818,92 @@ img {
 
 
     }
+
+    .nav-mobile{
+ padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;    }
+}
+.mobile-menu {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  width: 100%;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  transform: translateY(-120%);
+  transition: transform 0.4s ease;
+  
+}
+
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.mobile-menu.open {
+  transform: translateY(0);
+}
+#checkbox {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition-duration: .5s;
+}
+
+.bars {
+  width: 100%;
+  height: 4px;
+  background-color: gold;
+  border-radius: 4px;
+}
+
+#bar2 {
+  transition-duration: .8s;
+}
+
+#bar1,#bar3 {
+  width: 70%;
+}
+
+#checkbox:checked + .toggle .bars {
+  position: absolute;
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle #bar2 {
+  transform: scaleX(0);
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle #bar1 {
+  width: 100%;
+  transform: rotate(45deg);
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle #bar3 {
+  width: 100%;
+  transform: rotate(-45deg);
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle {
+  transition-duration: .5s;
+  transform: rotate(180deg);
 }

@@ -57,6 +57,6 @@ getMovieDetails() {
 
   tomovie(  id:string){
   this.router.navigate(['/movie', id]);
-  scroll(0,0);
+  scroll(0,10);
 }
   }

@@ -1,0 +1,69 @@
+<img src="ChatGPT Image Dec 18, 2025, 10_23_01 AM.png" alt="" class="signimg3" [routerLink]="['/home']" >
+<div class="signdiv">
+    <div class="signinbox">
+    <div class="signimgdiv">
+        <img src="global-home-bg-comp.avif.jpg" alt="" class="signimg">
+        <div>
+        <img src="ChatGPT Image Dec 18, 2025, 10_23_01 AM.png" alt="" class="signimg2">
+        <h1 class="title">....your go to movies website.</h1></div>
+    </div>
+    <div class="tabsdiv">
+        <mat-tab-group [(selectedIndex)]="tabIndex">
+  <mat-tab label="Sign-in" >
+  <div class="login-container">
+  <h2 class="login-title">Sign in</h2>
+
+  <form class="login-form">
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" placeholder="Enter your email" />
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" placeholder="Enter your password" />
+    </div>
+
+    <div class="form-options">
+     Don't have an account? <a class="forgot" (click)="selectTab(1)">Sign up</a>
+    </div>
+
+    <button type="submit" class="login-btn">Sign In</button>
+  </form>
+</div>
+
+  </mat-tab>
+  <mat-tab label="Sign-up"> 
+<div class="login-container">
+  <h2 class="login-title">Create Account</h2>
+
+  <form class="login-form">
+    <div class="form-group">
+      <label>Full Name</label>
+      <input type="text" placeholder="Enter your full name" />
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" placeholder="Enter your email" />
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" placeholder="Create a password" />
+    </div>
+
+ 
+
+ 
+
+    <button type="submit" class="login-btn">Sign Up</button>
+  </form>
+</div>
+
+
+  </mat-tab>
+        </mat-tab-group>
+    </div>
+    </div>
+</div>

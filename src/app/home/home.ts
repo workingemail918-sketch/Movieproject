@@ -1,11 +1,11 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angular/core';
 import { Service } from '../service';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './home.html',
   styleUrl: './home.css',
     schemas: [CUSTOM_ELEMENTS_SCHEMA], 
@@ -60,6 +60,7 @@ movienowplaying:any[]=[]
     const element = document.getElementById('movies');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });}
+      
   }
   loadmore() {
   this.service.getPopularMovies(this.popularpage + 1).subscribe((data) => {
@@ -97,4 +98,18 @@ tomovie(  id:string){
   this.router.navigate(['/movie', id]);
 }
 
+
+ menuOpen = false;
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+  isfavorite=false
+  addfavorite(){
+    this.isfavorite = true
+  }
+  removefavorite(){
+        this.isfavorite = false
+
+  }
 }

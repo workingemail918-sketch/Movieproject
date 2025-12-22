@@ -8,8 +8,38 @@
         <p class="tabs">My Favorites</p>
       </div>
     </div>
-    <button class="sign-in">Sign In</button>
+    <button class="sign-in" [routerLink]="['/signin']"  >Sign In</button>
   </nav>
+
+
+  <nav class="nav-mobile"> 
+     <div class="nav-1">
+      <img src="ChatGPT Image Dec 18, 2025, 10_23_01 AM.png" alt="" class="logo" />
+    </div>
+    <div>
+<input
+  type="checkbox"
+  id="checkbox"
+  [checked]="menuOpen"
+  (change)="toggleMenu()"
+/>    <label for="checkbox" class="toggle">
+        <div class="bars" id="bar1"></div>
+        <div class="bars" id="bar2"></div>
+        <div class="bars" id="bar3"></div>
+    </label>
+    </div>
+  </nav>
+
+
+
+  @if (menuOpen) {
+  <nav class="mobile-menu" [class.open]="menuOpen">
+  <a (click)="scrollto()">Movie</a>
+  <a>Favorites</a>
+</nav>}
+
+
+
   <div class="home-content">
     <h1 class="headingcontent">Welcome to the anyMovie</h1>
     <p class="headingsub">
@@ -172,7 +202,7 @@
           <p class="filmdec">{{ item.overview | slice : 0 : 200 }}...</p>
         </div></swiper-slide
       >}
-    </swiper-container>
+    </swiper-container> 
   </div>
 </section>
 <section
