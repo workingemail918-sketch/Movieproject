@@ -1,6 +1,6 @@
 [build]
   command = "ng build --configuration production"
-  publish = "dist/propro"
+  publish = "dist/movie-main"
 
 [context.production.environment]
   NODE_ENV = "production"
