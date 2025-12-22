@@ -6,7 +6,6 @@ import { Sign } from './sign/sign';
 export const routes: Routes = [
     {path:'', redirectTo: 'home', pathMatch: 'full'},
         {path:'home', component: Home},
-                {path:'signin', component: Sign},
-
+        {path:'signin', loadComponent: ()=> import('./sign/sign').then(m => m.Sign)},
         {path:'movie/:id', component: Moviedet}
 ];
