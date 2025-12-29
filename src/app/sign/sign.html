@@ -8,27 +8,27 @@
         <h1 class="title">....your go to movies website.</h1></div>
     </div>
     <div class="tabsdiv">
-        <mat-tab-group [(selectedIndex)]="tabIndex">
+        <mat-tab-group [(selectedIndex)]="tabIndex" class="my-tabs">
   <mat-tab label="Sign-in" >
   <div class="login-container">
   <h2 class="login-title">Sign in</h2>
 
-  <form class="login-form">
+  <form class="login-form" [formGroup]="signinform">
     <div class="form-group">
       <label>Email</label>
-      <input type="email" placeholder="Enter your email" />
+      <input type="email" placeholder="Enter your email" formControlName="email" />
     </div>
 
     <div class="form-group">
       <label>Password</label>
-      <input type="password" placeholder="Enter your password" />
+      <input type="password" placeholder="Enter your password" formControlName="password"/>
     </div>
 
     <div class="form-options">
      Don't have an account? <a class="forgot" (click)="selectTab(1)">Sign up</a>
     </div>
 
-    <button type="submit" class="login-btn">Sign In</button>
+    <button type="submit" class="login-btn" (click)="login()">Sign In</button>
   </form>
 </div>
 
@@ -37,27 +37,27 @@
 <div class="login-container">
   <h2 class="login-title">Create Account</h2>
 
-  <form class="login-form">
+  <form class="login-form" [formGroup]="signupform">
     <div class="form-group">
       <label>Full Name</label>
-      <input type="text" placeholder="Enter your full name" />
+      <input type="text" placeholder="Enter your full name" formControlName="name"/>
     </div>
 
     <div class="form-group">
       <label>Email</label>
-      <input type="email" placeholder="Enter your email" />
+      <input type="email" placeholder="Enter your email" formControlName="email"/>
     </div>
 
     <div class="form-group">
       <label>Password</label>
-      <input type="password" placeholder="Create a password" />
+      <input type="password" placeholder="Create a password" formControlName="password"/>
     </div>
 
  
 
  
 
-    <button type="submit" class="login-btn">Sign Up</button>
+    <button type="submit" class="login-btn" (click)="signup()">Sign Up</button>
   </form>
 </div>
 

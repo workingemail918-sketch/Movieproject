@@ -2,10 +2,13 @@ import { Routes } from '@angular/router';
 import { Home } from './home/home';
 import { Moviedet } from './moviedet/moviedet';
 import { Sign } from './sign/sign';
+import { Favorites } from './favorites/favorites';
 
 export const routes: Routes = [
     {path:'', redirectTo: 'home', pathMatch: 'full'},
         {path:'home', component: Home},
         {path:'signin', loadComponent: ()=> import('./sign/sign').then(m => m.Sign)},
-        {path:'movie/:id', component: Moviedet}
+        {path:'movie/:id', component: Moviedet},
+        {path:'favorites', component: Favorites},
+
 ];

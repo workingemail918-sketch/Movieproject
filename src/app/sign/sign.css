@@ -5,6 +5,15 @@ mat-tab-group{
         width: 600px;
     height: 700px;
 }
+.my-tabs {
+  --mat-tab-inactive-label-text-color:white !important;
+  --mat-tab-active-label-text-color: white !important;
+}
+
+
+span{
+  color: #fff;
+}
 .signimgdiv{
     position: relative;
     display: flex;

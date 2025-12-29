@@ -95,6 +95,7 @@ padding: 10px 80px;
     margin-bottom: 30px;
     max-width: 600px;
     color: rgba(255, 255, 255, 0.822);
+    line-height: 30px;
 }
 .bigbtn{
     background-color: rgb(255, 215, 0);
@@ -119,7 +120,6 @@ padding: 10px 80px;
 }
 .filmcontainer{
     display: flex;
-    overflow-x: auto;
     gap: 20px;
     padding-bottom: 20px;
     cursor: pointer;

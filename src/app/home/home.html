@@ -5,10 +5,13 @@
       <img src="ChatGPT Image Dec 18, 2025, 10_23_01 AM.png" alt="" class="logo" />
       <div style="display: flex; gap: 50px; align-items: center">
         <p class="tabs" (click)="scrollto()">Movies</p>
-        <p class="tabs">My Favorites</p>
+        <p class="tabs" [routerLink]="['/favorites']">My Favorites</p>
       </div>
     </div>
-    <button class="sign-in" [routerLink]="['/signin']"  >Sign In</button>
+    @if (!uid) {
+    <button class="sign-in" [routerLink]="['/signin']"  >Sign In</button>}
+    @if (uid) {
+  <button class="sign-in"(click)="logout()" style="background-color:red;">Log Out</button>}
   </nav>
 
 
@@ -36,6 +39,8 @@
   <nav class="mobile-menu" [class.open]="menuOpen">
   <a (click)="scrollto()">Movie</a>
   <a>Favorites</a>
+    <a  [routerLink]="['/signin']" >Sign-in</a>
+
 </nav>}
 
 

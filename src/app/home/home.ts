@@ -12,7 +12,7 @@ import { Router, RouterLink } from '@angular/router';
 
 })
 export class Home {
-  
+  uid:string|undefined =''
   @ViewChild('movieSwiper', { static: false })
   movieSwiper!: ElementRef;
    @ViewChild('movieSwiperr', { static: false })
@@ -53,8 +53,9 @@ movienowplaying:any[]=[]
 
   ngOnInit() {
     this.getallmovies();
-    console.log(this.popularpage);
-    
+    this.service.user$.subscribe(user => {
+      this.uid = user?.uid
+    });    
   }
   scrollto(){
     const element = document.getElementById('movies');
@@ -111,5 +112,14 @@ tomovie(  id:string){
   removefavorite(){
         this.isfavorite = false
 
+  }
+  test(){
+ 
+  }
+  logout(){
+    this.service.signout().then(()=>{
+alert('Succesfully Logged out')
+      
+    })
   }
 }

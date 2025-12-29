@@ -2,6 +2,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, OnInit, ViewChild } from
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Service } from '../service';
 import { CommonModule } from '@angular/common';
+import { arrayUnion } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-moviedet',
@@ -20,12 +21,17 @@ export class Moviedet implements OnInit {
   movieDetails:any;
   similarMovies:any[]=[];
 constructor(private route:ActivatedRoute, private router:Router, private service:Service) {}
+useruid:string | undefined = ''
+favorites = []
 ngOnInit() {
   this.route.paramMap.subscribe(params => {
       this.movieId = Number(params.get('id'));
       this.getMovieDetails();
       this.getsimilarMovies();
     });
+    this.service.user$.subscribe((user)=>{
+      this.useruid = user?.uid
+    })
 }
 getMovieDetails() {
     this.service.getmoviedetails(this.movieId).subscribe(async data => {
@@ -58,5 +64,18 @@ getMovieDetails() {
   tomovie(  id:string){
   this.router.navigate(['/movie', id]);
   scroll(0,10);
+}
+addtofav(){
+ if (this.useruid) {
+   this.service.addfav(this.useruid,{
+  favorites: arrayUnion(this.movieDetails),
+  }).then(()=>{
+    alert(`${this.movieDetails.title} added to favorites succesfully`)
+  })
+ }else{
+  alert('You need to signup first')
+  this.router.navigate(['/signin'])
+ }
+ 
 }
   }
