@@ -79,4 +79,9 @@ getdoc(id:any){
    const docref = doc(this.firestore,`user/${id}` )
   return docData(docref)
 }
+searchMovies(query: string) {
+    return this.http.get<any>(
+      `${this.baseUrl}/search/movie?api_key=${this.apiKey}&query=${query}`
+    );
+  }
 }

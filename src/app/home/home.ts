@@ -2,10 +2,11 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angul
 import { Service } from '../service';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, FormsModule],
   templateUrl: './home.html',
   styleUrl: './home.css',
     schemas: [CUSTOM_ELEMENTS_SCHEMA], 
@@ -122,4 +123,23 @@ alert('Succesfully Logged out')
       
     })
   }
+  search=''
+filteredMovies:any[] = [];
+  searchfunction(){
+  this.service.searchMovies(this.search).subscribe((res)=>{
+    this.filteredMovies = res.results.slice(0,4)
+    console.log(this.filteredMovies);
+  
+  })
+   }
+   issearch = false
+   searchtoggle(){
+    this.issearch = !this.issearch
+   }
+    searchtoggleb(){
+      setTimeout(() => {
+            this.issearch = !this.issearch
+
+      }, 300);
+   }
 }

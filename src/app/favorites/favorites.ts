@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Service } from '../service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-favorites',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './favorites.html',
   styleUrl: './favorites.css',
 })
